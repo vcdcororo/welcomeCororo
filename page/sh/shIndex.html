@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drum Machine</title>
+  <link rel="stylesheet" href="shStyle.css">
+  <link rel="icon" href="./samples/favicon.ico" type="image/x-icon">
+</head>
+  <body>
+    <div class="overlay">
+      <script>
+        alert("드럼머신을 준비 중입니다!");
+      </script>
+    </div>
+    <header>
+      <div class="gnb">
+        <p>Web Collage</p>
+        <div class="button">
+          <button class="image-button"><img src="./samples/00.png" width="50px"></button>
+          <button class="image-button"><img src="./samples/01.png" width="50px"></button>
+          <button class="image-button"><img src="./samples/02.png" width="50px"></button>
+          <button class="image-button"><img src="./samples/03.png" width="50px"></button>
+          <button class="image-button"><img src="./samples/04.png" width="50px"></button>
+          <button class="image-button"><img src="./samples/05.png" width="50px"></button>
+        </div>
+        <div>
+        <button class="modal-button">규칙과 구간 설정</button>
+        <div class="modal"></div>
+        </div>
+    </div>
+    </header>
+    <main>
+        <div class="image-container">
+            <div class="image-set" data-index="0">
+              <img src="./samples/00/01q.png" data-index="q" style="left: 10vw; top: 0;">
+              <img src="./samples/00/02w.png" data-index="w" style="left: -10vw; top: 25vh;">
+              <img src="./samples/00/03e.png" data-index="e" style="left: 15vw; top: 55vh;">
+              <img src="./samples/00/04r.png" data-index="r" style="left: 3vw; top: 0vh; width: 45vw; z-index: 0;">
+              <img src="./samples/00/05a.png" data-index="a" style="left: 30vw; top: 40vh; ">
+              <img src="./samples/00/06s.png" data-index="s" style="left: 18vw; top: 50vh;">
+              <img src="./samples/00/07d.png" data-index="d" style="left: 33vw; top: 20vh;">
+              <img src="./samples/00/08f.png" data-index="f" style="left: 10vw; top: 20vh;">
+              <img src="./samples/00/09z.png" data-index="z" style="left: 15vw; top: 20vh;">
+              <img src="./samples/00/10x.png" data-index="x" style="left: 24vw; top: 13vh;">
+              <img src="./samples/00/11c.png" data-index="c" style="left: -22vw; top: 10vh; width: 20vw;">
+              <img src="./samples/00/12v.png" data-index="v" style="left: 45vw; top: 20vh; width: 25vw;">
+
+              <audio src="./samples/00/01_drum.mp3" data-index="q"></audio>
+              <audio src="./samples/00/02_guitar.wav" data-index="w"></audio>
+              <audio src="./samples/00/03_bass.wav" data-index="e"></audio>
+              <audio src="./samples/00/04_sen.mp3" data-index="r"></audio>
+              <audio src="./samples/00/05.wav" data-index="a"></audio>
+              <audio src="./samples/00/06.mp3" data-index="s"></audio>
+              <audio src="./samples/00/07.mp3" data-index="d"></audio>
+              <audio src="./samples/00/08.wav" data-index="f"></audio>
+              <audio src="./samples/00/09.mp3" data-index="z"></audio>
+              <audio src="./samples/00/10.mp3" data-index="x"></audio>
+              <audio src="./samples/00/11.mp3" data-index="c"></audio>
+              <audio src="./samples/00/12.mp3" data-index="v"></audio>
+
+            </div>
+            <div class="image-set" data-index="1">
+              <img src="./samples/01/01q.png" data-index="q" style="left: 15vw; top: 0; z-index: 1; width: 45vw;">
+              <img src="./samples/01/02w.png" data-index="w" style="left: -15vw; top: 25vh; width: 50vw;">
+              <img src="./samples/01/03e.png" data-index="e" style="left: 5vw; top: 55vh; z-index: 1; width: 40vw;">
+              <img src="./samples/01/04r.png" data-index="r" style="left: -5vw; top: 0vh; width: 15vw; z-index: 1;">
+              <img src="./samples/01/05a.png" data-index="a" style="left: 0vw; top: 0vh; width: 15vw; mix-blend-mode: multiply;">
+              <img src="./samples/01/06s.png" data-index="s" style="left: 40vw; top: 30vh;">
+              <img src="./samples/01/07d.png" data-index="d" style="left: 5vw; top: 40vh; z-index: 1;">
+              <img src="./samples/01/08f.png" data-index="f" style="left: 7vw; top: 35vh; z-index: 1;">
+              <img src="./samples/01/09z.png" data-index="z" style="left: 35vw; top: 50vh; mix-blend-mode: multiply;">
+              <img src="./samples/01/10x.png" data-index="x" style="left: 30vw; top: 0vh; mix-blend-mode: multiply;">
+              <img src="./samples/01/11c.png" data-index="c" style="left: 10vw; top: 60vh;">
+              <img src="./samples/01/12v.png" data-index="v" style="left: 5vw; top: 10vh; mix-blend-mode: exclusion;">
+
+              <audio src="./samples/00/01_drum.mp3" data-index="q"></audio>
+              <audio src="./samples/00/02_guitar.wav" data-index="w"></audio>
+              <audio src="./samples/00/03_bass.wav" data-index="e"></audio>
+              <audio src="./samples/00/04_sen.mp3" data-index="r"></audio>
+              <audio src="./samples/00/05.wav" data-index="a"></audio>
+              <audio src="./samples/00/06.mp3" data-index="s"></audio>
+              <audio src="./samples/00/07.mp3" data-index="d"></audio>
+              <audio src="./samples/00/08.wav" data-index="f"></audio>
+              <audio src="./samples/00/09.mp3" data-index="z"></audio>
+              <audio src="./samples/00/10.mp3" data-index="x"></audio>
+              <audio src="./samples/00/11.mp3" data-index="c"></audio>
+              <audio src="./samples/00/12.mp3" data-index="v"></audio>
+
+            </div>
+            <div class="image-set" data-index="2">
+              <img src="./samples/02/01q.png" data-index="q" style="left: 10vw; top: 20vh; height: 70vh;">
+              <img src="./samples/02/02w.png" data-index="w" style="left: -3vw; top: 0vh;">
+              <img src="./samples/02/03e.png" data-index="e" style="left: 5vw; top: 20vh;">
+              <img src="./samples/02/04r.png" data-index="r" style="left: 0vw; top: 0vh;">
+              <img src="./samples/02/05a.png" data-index="a" style="left: 20vw; top: -10vh; width: 50vw; mix-blend-mode: soft-light;">
+              <img src="./samples/02/06s.png" data-index="s" style="left: 0vw; top: 0vh; height: 80vh; mix-blend-mode: soft-light;">
+              <img src="./samples/02/07d.png" data-index="d" style="left: 40vw; top: 3vh; height: 5vh;">
+              <img src="./samples/02/08f.png" data-index="f" style="left: 40vw; top: 13vh; height: 5vh;">
+              <img src="./samples/02/09z.png" data-index="z" style="left: -20vw; top: -3vh;">
+              <img src="./samples/02/10x.png" data-index="x" style="left: 25vw; top: 20vh;">
+              <img src="./samples/02/11c.png" data-index="c" style="left: 40vw; top: 70vh;">
+              <img src="./samples/02/12v.png" data-index="v" style="left: -10vw; top: 40vh;">
+
+              <audio src="./samples/00/01_drum.mp3" data-index="q"></audio>
+              <audio src="./samples/00/02_guitar.wav" data-index="w"></audio>
+              <audio src="./samples/00/03_bass.wav" data-index="e"></audio>
+              <audio src="./samples/00/04_sen.mp3" data-index="r"></audio>
+              <audio src="./samples/00/05.wav" data-index="a"></audio>
+              <audio src="./samples/00/06.mp3" data-index="s"></audio>
+              <audio src="./samples/00/07.mp3" data-index="d"></audio>
+              <audio src="./samples/00/08.wav" data-index="f"></audio>
+              <audio src="./samples/00/09.mp3" data-index="z"></audio>
+              <audio src="./samples/00/10.mp3" data-index="x"></audio>
+              <audio src="./samples/00/11.mp3" data-index="c"></audio>
+              <audio src="./samples/00/12.mp3" data-index="v"></audio>
+
+            </div>
+            <div class="image-set" data-index="3">
+              <img src="./samples/03/01q.png" data-index="q" style="left: 5vw; top: 0vh;;">
+              <img src="./samples/03/02w.png" data-index="w" style="left: 15vw; top: 25vh; z-index: 1;">
+              <img src="./samples/03/03e.png" data-index="e" style="left: -10vw; top: 50vh;">
+              <img src="./samples/03/04r.png" data-index="r" style="left: 0vw; top: 0vh;">
+              <img src="./samples/03/05a.png" data-index="a" style="left: 12vw; top: 23vh; z-index: 2;">
+              <img src="./samples/03/06s.png" data-index="s" style="left: 35vw; top: 25vh;">
+              <img src="./samples/03/07d.png" data-index="d" style="left: 30vw; top: 20vh;">
+              <img src="./samples/03/08f.png" data-index="f" style="left: 15vw; top: 15vh;">
+              <img src="./samples/03/09z.png" data-index="z" style="left: 50vw; top: 10vh;">
+              <img src="./samples/03/10x.png" data-index="x" style="left: 30vw; top: 40vh;">
+              <img src="./samples/03/11c.png" data-index="c" style="left: -20vw; top: 20vh;">
+              <img src="./samples/03/12v.png" data-index="v" style="left: 40vw; top: 30vh;">
+
+              <audio src="./samples/00/01_drum.mp3" data-index="q"></audio>
+              <audio src="./samples/00/02_guitar.wav" data-index="w"></audio>
+              <audio src="./samples/00/03_bass.wav" data-index="e"></audio>
+              <audio src="./samples/00/04_sen.mp3" data-index="r"></audio>
+              <audio src="./samples/00/05.wav" data-index="a"></audio>
+              <audio src="./samples/00/06.mp3" data-index="s"></audio>
+              <audio src="./samples/00/07.mp3" data-index="d"></audio>
+              <audio src="./samples/00/08.wav" data-index="f"></audio>
+              <audio src="./samples/00/09.mp3" data-index="z"></audio>
+              <audio src="./samples/00/10.mp3" data-index="x"></audio>
+              <audio src="./samples/00/11.mp3" data-index="c"></audio>
+              <audio src="./samples/00/12.mp3" data-index="v"></audio>
+
+            </div>
+            <div class="image-set" data-index="4">
+
+              <img src="./samples/04/01q.png" data-index="q" style="top: 0;left: -15vw; z-index: 1;">
+              <img src="./samples/04/02w.png" data-index="w" style="top: 25vh;left: 10vw; z-index: 1;">
+              <img src="./samples/04/03e.png" data-index="e" style="top: 50vh;left: 0vw; z-index: 1;">
+              <img src="./samples/04/04r.png" data-index="r" style="top: 5vh;left: -10vw;">
+              <img src="./samples/04/05a.png" data-index="a" style="top: 30vh;left: 3vw;">
+              <img src="./samples/04/06s.png" data-index="s" style="top: 15vh;left: 10vw;">
+              <img src="./samples/04/07d.png" data-index="d" style="top: 20vh;left: 20vw;">
+              <img src="./samples/04/08f.png" data-index="f" style="top: 15vh;left: 17vw;">
+              <img src="./samples/04/09z.png" data-index="z" style="top: 40vh;left: -15vw;">
+              <img src="./samples/04/10x.png" data-index="x" style="top: 0vh;left: 40vw;">
+              <img src="./samples/04/11c.png" data-index="c" style="top: 35vh;left: 30vw;">
+              <img src="./samples/04/07d.png" data-index="v" style="top: 40vh;left: 50vw; width: 20vw; rotate: 90deg;">
+
+              <audio src="./samples/00/01_drum.mp3" data-index="q"></audio>
+              <audio src="./samples/00/02_guitar.wav" data-index="w"></audio>
+              <audio src="./samples/00/03_bass.wav" data-index="e"></audio>
+              <audio src="./samples/00/04_sen.mp3" data-index="r"></audio>
+              <audio src="./samples/00/05.wav" data-index="a"></audio>
+              <audio src="./samples/00/06.mp3" data-index="s"></audio>
+              <audio src="./samples/00/07.mp3" data-index="d"></audio>
+              <audio src="./samples/00/08.wav" data-index="f"></audio>
+              <audio src="./samples/00/09.mp3" data-index="z"></audio>
+              <audio src="./samples/00/10.mp3" data-index="x"></audio>
+              <audio src="./samples/00/11.mp3" data-index="c"></audio>
+              <audio src="./samples/00/12.mp3" data-index="v"></audio>
+
+            </div>
+            <div class="image-set" data-index="5">
+              <img src="./samples/05/01q.png" data-index="q" style="left: 0vw; top: 0vh; width: 50vw;">
+              <img src="./samples/05/02w.png" data-index="w" style="left: 0vw; top: 25vh; width: 50vw;">
+              <img src="./samples/05/03e.png" data-index="e" style="left: 0vw; top: 50vh; width: 50vw;">
+              <img src="./samples/05/04r.png" data-index="r" style="left: 5vw; top: 32vh; z-index: 1;">
+              <img src="./samples/05/05a.png" data-index="a" style="left: 25vw; top: -20vh;">
+              <img src="./samples/05/06s.png" data-index="s" style="left: 10vw; top: 15vh; mix-blend-mode:luminosity;">
+              <img src="./samples/05/07d.png" data-index="d" style="left: -20vw; top: -5vh; mix-blend-mode: luminosity;">
+              <img src="./samples/05/08f.png" data-index="f" style="left: 0vw; top: 40vh;">
+              <img src="./samples/05/09z.png" data-index="z" style="left: 20vw; top: 65vh;">
+              <img src="./samples/05/10x.png" data-index="x" style="left: -5vw; top: -10vh;">
+              <img src="./samples/05/11c.png" data-index="c" style="left: 50vw; top: 30vh;">
+              <img src="./samples/05/12v.png" data-index="v" style="left: -30vw; top: 20vh;">
+
+              <audio src="./samples/00/01_drum.mp3" data-index="q"></audio>
+              <audio src="./samples/00/02_guitar.wav" data-index="w"></audio>
+              <audio src="./samples/00/03_bass.wav" data-index="e"></audio>
+              <audio src="./samples/00/04_sen.mp3" data-index="r"></audio>
+              <audio src="./samples/00/05.wav" data-index="a"></audio>
+              <audio src="./samples/00/06.mp3" data-index="s"></audio>
+              <audio src="./samples/00/07.mp3" data-index="d"></audio>
+              <audio src="./samples/00/08.wav" data-index="f"></audio>
+              <audio src="./samples/00/09.mp3" data-index="z"></audio>
+              <audio src="./samples/00/10.mp3" data-index="x"></audio>
+              <audio src="./samples/00/11.mp3" data-index="c"></audio>
+              <audio src="./samples/00/12.mp3" data-index="v"></audio>
+              
+            </div>
+          </div>
+
+          <div id="keyboard">
+            <div class="keyboard-key">Q</div>
+            <div class="keyboard-key">W</div>
+            <div class="keyboard-key">E</div>
+            <div class="keyboard-key">R</div>
+            <div class="keyboard-key">A</div>
+            <div class="keyboard-key">S</div>
+            <div class="keyboard-key">D</div>
+            <div class="keyboard-key">F</div>
+            <div class="keyboard-key">Z</div>
+            <div class="keyboard-key">X</div>
+            <div class="keyboard-key">C</div>
+            <div class="keyboard-key">V</div>
+          </div>
+    </main>
+    <footer>
+      <div id="progressBar">
+        <div id="progressBarFill"></div>
+        <div id="progressBarHandle"></div>
+      </div>
+      <div class="player">
+        <div class="bar">
+          <div class="musicbar">
+            <audio id="myAudio" src="./samples/music.mp3"></audio>
+            <span id="playButton">PLAY</span>
+            <p id="currentTime">0:00</p>
+          </div>
+        </div>
+        <div class="title">
+          <img src="./samples/Cover.png" width="40px">
+          <div class="song">
+            <span>Drum Machine - 비틀비틀 짝짜꿍(한로로)</span>
+            <span>SungHoon Cho • 코로로 • 2023</span>
+          </div>
+        </div>
+        <span>keyboard</span>
+      </div>
+    </footer>
+    <script src="shMain.js" type="module"></script>
+
+  </body>
+</html>
