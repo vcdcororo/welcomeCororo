@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<div id="pausebtn" class="absolute z-3"><img class="image-box rtting" src="./1x/button3.png" alt=""></a></div>
+
+	<img class="absolute p-top "  src="./1x/background.png" alt="">
+</body>
+
+<script>
+	function pausemusic() {
+		jiwonpart1.pause();
+        hwanjunpart2.pause();
+        minjepart3.pause();
+        chaesunpart4.pause();
+        suyeonpart5.pause();
+        sunghoonpart6.pause();
+}
+
+// 특정 요소 선택
+var pausemusicbtn = document.getElementById('pausebtn');
+
+// 클릭 이벤트 핸들러 추가
+pausemusicbtn.addEventListener('click', pausemusic);
+</script>

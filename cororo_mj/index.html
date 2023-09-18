@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Between two worlds</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./1x/white_dot.png" type="image/x-icon">
+</head>
+<body>
+    <main>
+      <section id="section-01">
+        <img class="absolute items-center mx-auto grid grid-col-6 gap-6 justify-center z-2" style="top:75%; left:50%; transform:translate(-50%, -50%);"  src="./1x/warn.png" alt="">
+        <a id="gomain" class="fix pausecircle z-4 items-center mx-auto disnon" style="top:30%; left:50%; transform:translate(-50%, -50%);" href="./main.html"></a>
+          <div class="absolute items-center mx-auto grid grid-col-6 gap-6 justify-center w-full z-2" style="top:60%; transform:translate(0, -50%);">
+            <div class="blackcircle circle"></div>
+            <div class="blackcircle circle"></div>
+            <div class="blackcircle circle"></div>
+            <div id="myDiv" class="circle drop"></div>
+            <div class="blackcircle circle"></div>
+            <div class="blackcircle circle"></div>
+        </div>
+          
+
+        <div class="absolute items-center mx-auto grid grid-col-6 gap-8 justify-center w-full z-3" style="top:45%; transform:translate(0, -50%);">
+          <p class="image-box"></p>
+          <p class="image-box"></p>
+          <p class="image-box"></p>
+          <div class="mover"><img class="image-box" src="./1x/minje_ryhthm.png" alt=""></div>
+          <p class="image-box"></p>
+          <p class="image-box"></p>
+          <div><img class="image-box" src="./1x/hwanjun_ryhthm.png" alt=""></div>
+          <div><img class="image-box" src="./1x/chaesun_ryhthm.png" alt=""></div>
+          <div><img class="image-box" src="./1x/jiwon_ryhthm.png" alt=""></div>
+          <p class="image-box"></p>
+          <div><img class="image-box" src="./1x/sunghoon_ryhthm.png" alt=""></div>
+          <div><img class="image-box" src="./1x/suyeon_ryhthm.png" alt=""></div>
+      </div>
+
+        <img class="w-full h-full fix z-1"  src="./1x/background.png" alt="">
+        
+      </section>
+      
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+      $(function() {
+  $(".mover").draggable();
+  $(".drop").droppable({
+    drop: function(event, ui) {
+      $(this).addClass("blackcircle");
+      
+      if ($("#myDiv").hasClass("blackcircle")) {
+        document.getElementById("gomain").style.display = "block";
+      } else {
+        document.getElementById("gomain").style.display = "none";
+      }
+    },
+  });
+});
+  </script>
+    
+</body>
+</html>
+
