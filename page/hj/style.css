@@ -1,0 +1,295 @@
+html,
+body {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+img {
+  user-select: none;
+}
+
+.theater {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: -100px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  pointer-events: none;
+  user-select: none;
+}
+
+.theater img {
+  /* max-height: 2560px; */
+  width: auto;
+}
+
+.cube__face--back a{
+  position: absolute;
+}
+.scene-01 {
+  z-index: -1;
+}
+.scene {
+  width: 100%;
+  height: 100%;
+  perspective: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  position: absolute;
+}
+.scene::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(0,0,0);
+  background: radial-gradient(circle, rgba(255,0,112,0) 0%, rgba(3,12,27,0.3981967787114846) 50%, rgba(1,0,11,0.7987570028011204) 100%);
+  z-index: 20; /* 필요에 따라 z-index를 조정하세요 */
+  pointer-events: none;
+  box-sizing: content-box;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(300px) translateY(-300px);
+  z-index: 100;
+}
+
+.cube__face {
+  position: absolute;
+  line-height: 200px;
+  font-size: 40px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  /* display: none; */
+}
+
+.cube__face--back {
+  /* background: #000000; */
+  width: 2048px;
+  height: 870px;
+  z-index: 21;
+  display: block;
+  /* overflow: hidden; */
+}
+
+
+
+.cube__face--right,
+.cube__face--left {
+  width: 1000px;
+  height: 870px;
+  background: hsl(342, 77%, 20%);
+}
+.cube__face--top,
+.cube__face--bottom {
+  width: 2048px;
+  height: 1000px;
+  background: hsl(343, 95%, 7%);
+}
+
+.cube__face--right {
+  transform: rotateY(90deg) translateZ(1024px);
+}
+.cube__face--back {
+  transform: rotateY(0) translateZ(-500px);
+}
+.cube__face--left {
+  transform: rotateY(-90deg) translateZ(1024px);
+}
+.cube__face--top {
+  transform: rotateX(90deg) translateZ(435px);
+}
+.cube__face--bottom {
+  transform: rotateX(-90deg) translateZ(435px);
+}
+
+#disblock{
+  display: block;
+}
+#disnone{
+  display: none;
+}
+
+/* composition */
+.comp {
+  width: 100%;
+  height: 100%;
+  /* overflow: hidden; */
+  position: absolute;
+}
+.black-box {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  background-color: black;
+  z-index: 1000;
+}
+
+/* sunghoon(sh) */
+.img-sh {
+  position: absolute;
+  display: block;
+}
+.sh-01 {
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+}
+.sh-02 {
+  z-index: 11;
+  width: 45%;
+  bottom: 100px;
+  left: 165px;
+}
+.sh-03 {
+  z-index: 12;
+  height: 85%;
+  top: 60px;
+  left: 40px;
+}
+.sh-04 {
+  z-index: 13;
+  width: 380px;
+  right: 10px;
+  top: 230px;
+}
+.sh-05 {
+  z-index: 14;
+  width: 380px;
+  right: 800px;
+  top: 30px;
+}
+.sh-06 {
+  z-index: 15;
+  height: 55%;
+  top: 0px;
+  right: 380px;
+}
+
+/* 02 jiwon(jw) */
+.comp-jw{
+  /* background-color: aqua; */
+}
+
+/* 03 hwanjun(hj) */
+.comp-hj{
+  /* background-color: rgb(132, 28, 158); */
+}
+
+/* 04 minje(mj) */
+.comp-mj{
+  /* background-color: rgb(102, 49, 70); */
+}
+
+/* 05 chaesun(cs) */
+.comp-cs{
+  /* background-color: rgb(47, 174, 66); */
+}
+
+/* 06 suyeon(sy) */
+.comp-sy{
+  /* background-color: rgb(55, 0, 255); */
+}
+
+
+/* music play */
+#playButton {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  user-select: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  transform: translateX(-50%);
+}
+
+#progressBar {
+  width: 100%;
+  height: 0;
+  background-color: #ccc;
+  position: absolute;
+  z-index: 300;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#progressBarFill {
+  height: 100%;
+  background-color: #d0f4fd;
+}
+
+#progressBarHandle {
+  width: 30px;
+  height: 30px;
+  /* border-radius: 5px; */
+  transform: scale(2);
+  /* background-color: #000; */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  cursor: grab;
+  
+}
+#progressBarHandle img {
+  width: 200px;
+  transform: translate(-50%);
+}
+
+/* backlight-control */
+.backlight {
+  box-shadow: 0 0 400px 100px rgb(255, 153, 0, 0.1);
+}
+
+@keyframes blc-01 {
+  0% {
+    box-shadow: 0 0 400px 100px rgb(255, 153, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 400px 100px rgb(255, 153, 0, 0.1);
+  }
+}
+@keyframes anim-blackbox{
+  0%{
+    opacity: 1;
+  }
+  90%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+.anim-blackbox-01{
+  animation: anim-blackbox 5s linear;
+}
+.anim-blackbox-02{
+  animation: anim-blackbox 1.5s ease-in;
+}
+.anim-blackbox-03{
+  animation: anim-blackbox 1.5s ease-in;
+}
+.anim-blackbox-04{
+  animation: anim-blackbox .3s ease-in .8s;
+}
+
+.blc-01 {
+  animation: blc-01 5s linear ;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cororo</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
+    />
+  </head>
+  <body>
+    <div class="scene">
+      <div class="cube">
+        <!-- <div class="cube__face cube__face--front">front</div> -->
+        <div class="cube__face cube__face--back backlight">
+          <div id="progressBar">
+              <div id="progressBarFill"></div>
+              <div id="progressBarHandle">
+                <img src="./src/eagle.png" draggable="false" alt="eagle">
+              </div>
+          </div>
+          <!-- <div class="black-box" id="disblock"></div> -->
+          <div class="comp comp-sh" id="disnone">
+            <img class="img-sh sh-01" src="./src/01/01_sunghoon_thumb-01.png" alt="1">
+            <img class="img-sh sh-02" src="./src/01/01_sunghoon_thumb-02.png" alt="2">
+            <img class="img-sh sh-03" src="./src/01/01_sunghoon_thumb-03.png" alt="3">
+            <img class="img-sh sh-04" src="./src/01/01_sunghoon_thumb-04.png" alt="4">
+            <img class="img-sh sh-05" src="./src/01/01_sunghoon_thumb-05.png" alt="5">
+            <img class="img-sh sh-06" src="./src/01/01_sunghoon_thumb-06.png" alt="6">
+          </div>
+          <div class="comp comp-jw" id="disnone>
+            <img class="img-jw" src="./src/02_jiwon_thumb.png" alt="" width="100%">
+          </div>
+          <div class="comp comp-hj" id="disnone>
+            <img class="img-hj" src="./src/03_hwanjun_thumb.jpg" alt="" width="100%">
+          </div>
+          <div class="comp comp-mj" id="disnone>
+            <img class="img-mj" src="./src/04_kimminje_thumb.png" alt="" width="100%">
+          </div>
+          <div class="comp comp-cs" id="disnone>
+            <img class="img-cs" src="./src/05_chaesun_thumb.png" alt="" width="100%">
+          </div>
+          <div class="comp comp-sy" id="disnone>
+            <img class="img-sy" src="./src/06_suyeon_thumb.png" alt="" width="100%">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scene scene-01">
+      <div class="cube">
+        <div class="cube__face cube__face--right"></div>
+        <div class="cube__face cube__face--left"></div>
+        <div class="cube__face cube__face--top"></div>
+        <div class="cube__face cube__face--bottom"></div>
+      </div>
+    </div>
+
+    <div class="theater">
+      <img src="./src/theater.png" alt="" height="1400vh">
+    </div>
+
+    <audio id="myAudio"></audio>
+    <span id="playButton">PLAY</span>
+    <p id="currentTime">0:00</p>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
