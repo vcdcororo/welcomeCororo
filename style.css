@@ -84,10 +84,9 @@ section#UI{
   perspective: 700px;
 }
 section#UI .btn {
-  display: block;
   color: white;
   font-size: 20px;
-  width: 60px;
+  height: 110vh;
   text-align: center;
   cursor: pointer;
 }
@@ -96,34 +95,46 @@ section#UI .btn-top {
   position: absolute;
   top: 0;
 }
-.btn-move{
-  position: absolute;
-  display: flex;
-  
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: space-evenly;
+section#UI .btn h1{
 
-  bottom: 0;
-  height: 80px;
-  width: 250px;
-  border-radius: 268px;
-  transform: rotateX(35deg) translateZ(-100px) translateX(-80px) translateY(0vh);
 }
-.btn-bg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
+.btn-move{
+  display: block;
+  top: 0;
 }
 .btn-left {
+  position: absolute;
+  display: flex;
   z-index: 11;
+  left: 0;
+  width: 10vw;
+  transform: translateY(-51%);
+  background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+  transition: all .5s ease;
+  align-items: center;
+  justify-content: center;
 }
 .btn-right {
+  position: absolute;
+  display: flex;
+  right: 0;
   z-index: 11;
+  width: 10vw;
+  transform: translateY(-51%);
+  background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
+  transition: all .5s ease;
+  align-items: center;
+  justify-content: center;
+}
+.btn-left:hover{
+  width: 18vw;
+  background: linear-gradient(90deg, rgba(256,256,256,0.3) 0%, rgba(256,256,256,0) 100%);
+}
+.btn-right:hover{
+  width: 18vw;
+  background: linear-gradient(270deg, rgba(256,256,256,0.3) 0%, rgba(0,0,0,0) 100%);
 }
 .btn-wrap{
-    /* width: 500px; */
     height: 500px;
     position: absolute;
     transform-style: preserve-3d; /* 3D 변환 유지 설정 */
