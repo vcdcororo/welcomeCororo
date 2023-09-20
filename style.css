@@ -96,7 +96,8 @@ section#UI .btn-top {
   top: 0;
 }
 section#UI .btn h1{
-
+  font-family: "yoon-a-yoonche", sans-serif;
+  opacity: 0.3;
 }
 .btn-move{
   display: block;
@@ -113,6 +114,10 @@ section#UI .btn h1{
   transition: all .5s ease;
   align-items: center;
   justify-content: center;
+}
+section#UI .btn-left:hover h1,
+section#UI .btn-right:hover h1{
+  opacity: 1;
 }
 .btn-right {
   position: absolute;
