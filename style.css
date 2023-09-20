@@ -67,7 +67,10 @@ section#toggle-page{
   background-color: #ffffff;
   display: none;
 }
-
+.cs-iframe {
+  width: 35vw;
+  height: 97vh;
+}
 /* UI */
 section#UI{
   z-index: 100;
