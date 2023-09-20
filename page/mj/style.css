@@ -4,12 +4,21 @@
     text-decoration: none;
     font-size: 1em;
 }
-body{
+html,body{
+    width: 100vw;
+    height: 100vh;
     overflow-x: hidden;
+}
+body{
     -webkit-user-select:none;
     -moz-user-select:none;
     -ms-user-select:none;
-    user-select:none
+    user-select:none;
+
+    line-height: 1;
+    background: white;
+    color: black;
+    margin: 0px !important;
 }
 
 .circle{
@@ -20,6 +29,35 @@ body{
     outline-color: #373633;
     border-radius: 50%;
     display: inline-block;
+}
+#minje_black{
+    pointer-events: none;
+}
+#bg-image {
+    pointer-events: none;
+}
+
+#minjemover,
+#jiwonmover,
+#hwanjunmover,
+#sunghoonmover,
+#chaesunmover,
+#suyeonmover
+{
+    cursor: grab;
+}
+.eventnone{
+    pointer-events: none;
+}
+.cursorGrab {
+    cursor: grab;
+}
+
+.w-full {
+    width:100%;
+}
+.h-full{
+    height:100%;
 }
 
 .cover{
@@ -77,21 +115,8 @@ body{
 .overlay{
     mix-blend-mode: overlay;
 }
-#minje_black{
-    pointer-events: none;
-}
-#bg-image {
-    pointer-events: none;
-}
 .cover{
     pointer-events: none;
-}
-
-body {
-    line-height: 1;
-    background: white;
-    color: black;
-    margin: 0px !important;
 }
 
 .block {
@@ -151,19 +176,6 @@ body {
     grid-template-rows:repeat(6,minmax(0,1fr));
 }
 
-#minjemover,
-#jiwonmover,
-#hwanjunmover,
-#sunghoonmover,
-#chaesunmover,
-#suyeonmover
-{
-    cursor: grab;
-}
-.h-full{
-    height:100%;
-}
-
 .items-center {
     align-items: center;
 }
@@ -189,10 +201,7 @@ body {
     position: relative;
 }
 
-.w-full {
-    width:100%;
-    pointer-events: none;
-}
+
 
 .z-10{
     z-index:10;

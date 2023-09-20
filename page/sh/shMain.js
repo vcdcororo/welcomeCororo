@@ -140,7 +140,9 @@ function action(index) {
 
 
 window.addEventListener('load', function() {
-  alert("드럼머신이 준비되었습니다! 자판이 영어로 설정되어 있는지 확인해주세요 :)");
+  var alertText = document.querySelector('.overlay h1');
+  alertText.innerHTML = "드럼머신이 준비되었습니다! 자판이 영어로 설정되어 있는지 확인해주세요"
+  // alert("드럼머신이 준비되었습니다! 자판이 영어로 설정되어 있는지 확인해주세요 :)");
   var overlay = document.querySelector('.overlay');
   overlay.style.display = 'none';
   selectImage(0);

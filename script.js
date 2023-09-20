@@ -3,6 +3,24 @@ const btnTop = document.querySelector(".btn-top");
 const btnLeft = document.querySelector(".btn-left");
 const btnRight = document.querySelector(".btn-right");
 
+const togglePage = document.querySelector("#toggle-page");
+const pageIframe = document.querySelectorAll(".page-iframe");
+const playerObj = document.querySelectorAll(".obj");
+
+for(let i = 0; i < 6; i++){
+    playerObj[i].addEventListener("click", function() {
+        togglePage.style.display = "flex";
+        pageIframe[i].src = pageIframe[i].src;
+        pageIframe[i].style.display = "block";
+    });
+    togglePage.addEventListener("click", function() {
+        togglePage.style.display = "none";
+        pageIframe[i].src = pageIframe[i].src;
+        pageIframe[i].style.display = "none";
+    });
+}
+
+
 let currentFace = 0;
 let currentDeg = 0;
 let toggleTop = false;

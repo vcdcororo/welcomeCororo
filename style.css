@@ -49,6 +49,23 @@ html,body{
     overflow: hidden;
     background-color: #000000;
 }
+section#toggle-page{
+  position: fixed;
+  background-color: #0000009a;
+  width: 100vw;
+  height: 100vh;
+  z-index: 500;
+  backdrop-filter: blur(4.5px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.page-iframe{
+  width: 90vw;
+  height: 90vh;
+  background-color: #ffffff;
+  display: none;
+}
 
 /* UI */
 section#UI{
@@ -70,7 +87,8 @@ section#UI .btn {
   text-align: center;
   cursor: pointer;
 }
-.btn-top {
+section#UI .btn-top {
+  display: none;
   position: absolute;
   top: 0;
 }
