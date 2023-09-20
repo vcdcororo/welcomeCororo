@@ -4,6 +4,13 @@
     text-decoration: none;
     font-size: 1em;
 }
+body{
+    overflow-x: hidden;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none
+}
 
 .circle{
     height: 200px;
@@ -70,7 +77,15 @@
 .overlay{
     mix-blend-mode: overlay;
 }
-
+#minje_black{
+    pointer-events: none;
+}
+#bg-image {
+    pointer-events: none;
+}
+.cover{
+    pointer-events: none;
+}
 
 body {
     line-height: 1;
@@ -136,8 +151,15 @@ body {
     grid-template-rows:repeat(6,minmax(0,1fr));
 }
 
-
-
+#minjemover,
+#jiwonmover,
+#hwanjunmover,
+#sunghoonmover,
+#chaesunmover,
+#suyeonmover
+{
+    cursor: grab;
+}
 .h-full{
     height:100%;
 }
@@ -169,6 +191,7 @@ body {
 
 .w-full {
     width:100%;
+    pointer-events: none;
 }
 
 .z-10{

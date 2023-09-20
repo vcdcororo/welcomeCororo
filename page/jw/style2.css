@@ -12,6 +12,20 @@ html,body{
 
     background: #FFE7C2; 
 }
+
+body{
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none
+  }
+  img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+  }
 header{
     position: fixed;
     width: 100%;
@@ -115,7 +129,9 @@ header{
 
 .img-wrap .circle{
     z-index: 30;
-    
+}
+.circle:hover{
+    transform: scale(1.2);
 }
 .drop-zone img {
     /* background-color: aqua; */
