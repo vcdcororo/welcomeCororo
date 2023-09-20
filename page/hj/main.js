@@ -2,6 +2,7 @@ let cube = document.querySelectorAll(".cube");
 let scene = document.querySelectorAll(".scene");
 const screen = document.querySelector(".cube__face--back");
 const blkbox = document.querySelector(".black-box");
+const overlay = document.querySelector(".overlay");
 
 scene[0].addEventListener("mousemove", function (event) {
   let mouseX = event.clientX;
@@ -38,6 +39,8 @@ let currentSeconds = 0;
 
 //재생 버튼을 누르면 오디오를 시작하고, 시작되어있는 상태면 멈춤.
 playButton.addEventListener("click", function () {
+  overlay.style.display = "none";
+  playButton.style.display = "none";
   if (audio.paused) {
     audio.play();
   } else {
@@ -131,56 +134,13 @@ function loadFunction(){
     setComp(121, 145, sceneSetting[3].comp, "disblock", "disnone" );
 
     setComp(163, 166, blkbox, "disblock", "disnone" );
-    addDelClass(163, 262, screen, "blc-05");
-    addDelClass(163, 262, screen, "blc-05-light");
+    addDelClass(145, 262, screen, "blc-05-light");
     setComp(145, 262, sceneSetting[4].comp, "disblock", "disnone" );
 
     addDelClass(262, 309, screen, "blc-06-light");
     setComp(262, 309, sceneSetting[5].comp, "disblock", "disnone" );
 }
 
-// function loadFunction() {
-//   // 0 ~ 47 sh
-//   addDelClass(0, 5, blkbox, "anim-blackbox-01");
-//   setComp(4, 46, blkbox, "disnone" );
-//   setComp(0, 46, comp[0], "disblock" );
-//   setComp(47, 309, comp[0], "disnone" );
-//   setComp(46, 49, blkbox, "disblock" );
-
-//   // 0:47 ~ 1:14 jw
-//   addDelClass(48, 50, blkbox, "anim-blackbox-02");
-//   setComp(49, 74, blkbox, "disnone" );
-//   setComp(47, 74, comp[1], "disblock" );
-//   setComp(0, 47, comp[1], "disnone" );
-//   setComp(74, 309, comp[1], "disnone" );
-
-//   // 1:14 ~ 2:00 hj
-//   setComp(0, 74, comp[2], "disnone" );
-//   setComp(74, 120, comp[2], "disblock" );
-//   setComp(120, 309, comp[2], "disnone" );
-//   setComp(118, 122, blkbox, "disblock" );
-
-//   // 2:00 ~ 2:25 mj
-//   addDelClass(120, 122, blkbox, "anim-blackbox-03");
-//   setComp(121, 145, blkbox, "disnone" );
-//   setComp(0, 120, comp[3], "disnone" );
-//   setComp(120, 145, comp[3], "disblock" );
-//   setComp(145, 309, comp[3], "disnone" );
-
-//   // 2:25 ~ 4:23 cs
-//   setComp(0, 145, comp[4], "disnone");
-//   setComp(145, 262, comp[4], "disblock" );
-//   setComp(263, 309, comp[4], "disnone");
-
-//   // 2:43 ~ 2:45
-//   addDelClass(165, 166, blkbox, "anim-blackbox-04");
-//   setComp(163, 168, blkbox, "disblock" );
-//   setComp(166, 168, blkbox, "disnone" );
-
-//   // 4:23 ~ 309
-//   setComp(0, 262, comp[5], "disnone" );
-//   setComp(262, 309, comp[5], "disblock" );
-// }
 let sceneSetting = [
   {
     //      ~ 0:47 sh 성훈
@@ -214,4 +174,4 @@ let sceneSetting = [
   }
 ]
 
-console.log(sceneSetting[0].objs);
+// console.log(sceneSetting[0].objs);
