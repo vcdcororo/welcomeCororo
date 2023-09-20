@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background: url(bg.jpg);
+            margin: 0;
+            overflow: hidden;
+            border: none;
+            background-size: 30%;
+        }
+
+        #container {
+            display: flex;
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+
+        #yellowArea {
+            flex: 0 0 300px;
+            background-color: #d5d5d5;
+            height: 100vh;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .yellowImageContainer {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+
+        .yellowImage {
+            position: absolute;
+            width: 100%;
+            top: -70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #movingImage {
+            width: 150%;
+        }
+
+        #redLine {
+            flex: 0 0 5pt;
+            background-color: rgb(43, 177, 46);
+            height: 100vh;
+            z-index: 5;
+        }
+
+        #nextButton {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 20px;
+            background-color: blue;
+            color: white;
+            font-size: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: visibility 0s, opacity 0.5s linear;
+            z-index: 4;
+        }
+
+        .purpleCover {
+            position: absolute;
+            height: 100vh;
+            left: 300px;
+            width: 0;
+            background-color: whitesmoke;
+            z-index: 1;
+        }
+
+        .imageInZindex {
+            position: absolute;
+            top: 0px;
+            left: 300px;
+            width: calc(100vw - 300px);
+            height: 100vh;
+            z-index: 2;
+            clip-path: inset(0 100% 0 0);
+            transition: clip-path 338s linear;
+        }
+
+        .imageInZindex img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #copyright {
+            position: absolute;
+            bottom: 15px;
+            right: 10px;
+            line-height: 11pt;
+            padding: 10px;
+            font-size: 9px;
+            color: white;
+        }
+
+        #logoImage {
+            position: absolute;
+            bottom: 70px;
+            right: 30px;
+            width: 40%;
+            height: auto;
+        }
+
+        #infoImage {
+            position: absolute;
+            visibility: hidden;
+            width: 300px;
+            z-index: 999;
+            pointer-events: none;
+        }
+
+        /* New styles for the mouse following image */
+        .mouseImage {
+            position: absolute;
+            display: none;
+            z-index: 10000;  /* Ensure it appears above everything */
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="yellowArea">
+            <div class="yellowImageContainer">
+                <img class="yellowImage" id="movingImage" src="title_bg.png">
+                <img class="yellowImage" src="title.png">
+            </div>
+            <div id="copyright">Copyright © 2023 by Suyeon Lee.<br>All rights reserved.</div>
+            <img id="logoImage" src="cororo.png">
+        </div>
+        <div id="redLine"></div>
+        <button id="nextButton">Next</button>
+    </div>
+
+    <!-- Image for mouse following functionality -->
+    <img class="mouseImage" id="preImage" src="">
+
+    <img id="infoImage" src="cororo_info.png">
+
+    <script>
+        const redLine = document.getElementById('redLine');
+        const nextButton = document.getElementById('nextButton');
+        const movingImage = document.getElementById('movingImage');
+        let purpleCover;
+        let start;
+        const totalDuration = 338000;
+        const delay = 3000;
+        const buttonDelay = 15000;
+        const maxMovementX = 100;
+        const maxMovementY = 200;
+
+        function move(timestamp) {
+            if (!start) start = timestamp;
+            const elapsed = timestamp - start - delay;
+            if (elapsed > 0) {
+                const progress = Math.min(elapsed / totalDuration, 1);
+                let moveBy = Math.floor(progress * (window.innerWidth - 300));
+                moveBy = Math.min(moveBy, window.innerWidth - 305);
+                redLine.style.transform = `translateX(${moveBy}px)`;
+
+                if (purpleCover) {
+                    purpleCover.style.width = `${moveBy}px`;
+                }
+
+                if (progress === 1 && elapsed > buttonDelay) {
+                    nextButton.style.visibility = 'visible';
+                    nextButton.style.opacity = '1';
+                }
+            }
+            if (elapsed < totalDuration + delay) {
+                window.requestAnimationFrame(move);
+            }
+        }
+
+        window.onload = function() {
+            purpleCover = document.createElement('div');
+            purpleCover.className = 'purpleCover';
+            document.getElementById('container').appendChild(purpleCover);
+
+            for (let i = 1; i <= 6; i++) {
+                let imageDiv = document.createElement('div');
+                imageDiv.className = 'imageInZindex';
+                let image = document.createElement('img');
+                image.src = `zindex${i}.png`;
+                imageDiv.appendChild(image);
+                document.getElementById('container').appendChild(imageDiv);
+            }
+
+            setTimeout(function() {
+                let images = document.getElementsByClassName('imageInZindex');
+                for (let i = 0; i < images.length; i++) {
+                    images[i].style.clipPath = 'inset(0)';
+                }
+            }, delay);
+
+            window.requestAnimationFrame(move);
+        }
+
+        const yellowArea = document.getElementById('yellowArea');
+        const infoImage = document.getElementById('infoImage');
+
+        yellowArea.addEventListener('mouseover', function(e) {
+            infoImage.style.visibility = 'visible';
+        });
+
+        yellowArea.addEventListener('mouseout', function(e) {
+            infoImage.style.visibility = 'hidden';
+        });
+
+        window.addEventListener('mousemove', function(e) {
+            const xRatio = e.clientX / window.innerWidth;
+            const yRatio = e.clientY / window.innerHeight;
+            movingImage.style.transform = `translate(-50%, -50%) translate(${maxMovementX * (0.5 - xRatio)}px, ${maxMovementY * (0.5 - yRatio)}px)`;
+            infoImage.style.left = `${e.pageX}px`;
+            infoImage.style.top = `${e.pageY}px`;
+        });
+
+        let moveCounter = 0;  // 이 부분은 원래 위치에 두고, 한 번만 선언됩니다.
+
+        window.addEventListener('mousemove', function(e) {
+            const xRatio = e.clientX / window.innerWidth;
+            const yRatio = e.clientY / window.innerHeight;
+            movingImage.style.transform = `translate(-50%, -50%) translate(${maxMovementX * (0.5 - xRatio)}px, ${maxMovementY * (0.5 - yRatio)}px)`;
+            infoImage.style.left = `${e.pageX}px`;
+            infoImage.style.top = `${e.pageY}px`;
+
+            moveCounter++;  // 여기에 추가된 코드
+            if (moveCounter % 150 === 0) {
+                let images = document.getElementsByClassName('imageInZindex');
+                for (let i = 0; i < images.length; i++) {
+                    images[i].style.zIndex = Math.floor(Math.random() * 1000);
+                }
+            }
+        });
+
+        const container = document.getElementById('container');
+        const preImage = document.getElementById('preImage');
+
+        preImage.addEventListener('load', function() {
+            this.width = this.naturalWidth * 0.2;
+            this.height = this.naturalHeight * 0.2;
+        });
+
+        container.addEventListener('mousemove', function(event) {
+            const x = event.clientX;
+            const y = event.clientY;
+            moveCounter++;  // 여기에도 moveCounter를 증가시킵니다.
+
+            if (moveCounter % 50 === 0) {
+                const randomNumber = Math.floor(Math.random() * 16) + 1;
+                preImage.src = 'piece/' + randomNumber + '.png';
+                preImage.style.display = 'block';
+            }
+
+            preImage.style.left = x + 'px';
+            preImage.style.top = y + 'px';
+        });
+
+        container.addEventListener('click', function(event) {
+            const newImage = document.createElement('img');
+            newImage.src = preImage.src;
+            newImage.style.position = 'absolute';
+            newImage.style.left = event.clientX + 'px';
+            newImage.style.top = event.clientY + 'px';
+            container.appendChild(newImage);
+
+            newImage.addEventListener('load', function() {
+                this.width = this.naturalWidth * 0.2;
+                this.height = this.naturalHeight * 0.2;
+            });
+        });
+    </script>
+</body>
+
+</html>
