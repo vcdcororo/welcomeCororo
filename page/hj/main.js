@@ -96,10 +96,12 @@ function formatTime(seconds) {
   return minutes + ":" + remainingSeconds;
 }
 
-function setComp(min, max, target, newName) {
+function setComp(min, max, target, newName, prevName) {
   let tgt = target;
   if (currentSeconds > min && currentSeconds < max) {
     tgt.setAttribute("id", newName);
+  } else {
+    tgt.setAttribute("id", prevName);
   }
 }
 
@@ -113,12 +115,28 @@ function addDelClass(min, max, target, className) {
 }
 // const comp = document.querySelectorAll(".comp");
 function loadFunction(){
-    setComp(0, 46, sceneSetting[0].comp, "disblock" );
-    setComp(47, 74, sceneSetting[1].comp, "disblock" );
-    setComp(74, 120, sceneSetting[2].comp, "disblock" );
-    setComp(121, 145, sceneSetting[3].comp, "disblock" );
-    setComp(145, 262, sceneSetting[4].comp, "disblock" );
-    setComp(263, 309, sceneSetting[5].comp, "disblock" );
+    addDelClass(0, 46, screen, "blc-01");
+    addDelClass(3, 46, screen, "blc-01-light");
+    setComp(0, 46, sceneSetting[0].comp, "disblock", "disnone" );
+
+    addDelClass(46, 74, screen, "blc-02")
+    addDelClass(49, 74, screen, "blc-02-light");
+    setComp(49, 73, sceneSetting[1].comp, "disblock", "disnone" );
+
+    addDelClass(73, 118, screen, "blc-03-light");
+    setComp(73, 118, sceneSetting[2].comp, "disblock", "disnone" );
+    
+    addDelClass(118, 145, screen, "blc-04");
+    addDelClass(121, 145, screen, "blc-04-light");
+    setComp(121, 145, sceneSetting[3].comp, "disblock", "disnone" );
+
+    setComp(163, 166, blkbox, "disblock", "disnone" );
+    addDelClass(163, 262, screen, "blc-05");
+    addDelClass(163, 262, screen, "blc-05-light");
+    setComp(145, 262, sceneSetting[4].comp, "disblock", "disnone" );
+
+    addDelClass(262, 309, screen, "blc-06-light");
+    setComp(262, 309, sceneSetting[5].comp, "disblock", "disnone" );
 }
 
 // function loadFunction() {

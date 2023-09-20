@@ -3,6 +3,7 @@ body {
   overflow: hidden;
   width: 100%;
   height: 100%;
+  background-color: rgb(0, 0, 0);
 }
 img {
   user-select: none;
@@ -85,8 +86,6 @@ img {
   display: block;
   /* overflow: hidden; */
 }
-
-
 
 .cube__face--right,
 .cube__face--left {
@@ -198,7 +197,7 @@ img {
 
 /* 05 chaesun(cs) */
 .comp-cs{
-  /* background-color: rgb(47, 174, 66); */
+  background-color: rgb(255, 255, 255);
 }
 
 /* 06 suyeon(sy) */
@@ -221,13 +220,13 @@ img {
 
 #progressBar {
   width: 100%;
-  height: 0;
+  /* height: 20px; */
   background-color: #ccc;
   position: absolute;
   z-index: 300;
-  top: 50px;
+  bottom: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) rotateZ(339deg);
 }
 
 #progressBarFill {
@@ -238,23 +237,19 @@ img {
 #progressBarHandle {
   width: 30px;
   height: 30px;
-  /* border-radius: 5px; */
-  transform: scale(2);
-  /* background-color: #000; */
   position: absolute;
   bottom: 0;
-  left: 0;
   cursor: grab;
-  
+  transform: scale(2);
 }
 #progressBarHandle img {
-  width: 200px;
-  transform: translate(-50%);
+  width: 50px;
+  transform: translateX(50%) translateY(-300%);
 }
 
 /* backlight-control */
 .backlight {
-  box-shadow: 0 0 400px 100px rgb(255, 153, 0, 0.1);
+  /* box-shadow: 0 0 400px 100px rgb(255, 153, 0, 0.1); */
 }
 
 @keyframes blc-01 {
@@ -265,6 +260,49 @@ img {
     box-shadow: 0 0 400px 100px rgb(255, 153, 0, 0.1);
   }
 }
+.blc-01-light{
+  box-shadow: 0 0 400px 100px rgb(255, 153, 0, 0.1);
+}
+@keyframes blc-02 {
+  0% {
+    box-shadow: 0 0 400px 100px rgb(255, 153, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 400px 100px rgba(255, 255, 255, 0.2);
+  }
+}
+.blc-02-light{
+  box-shadow: 0 0 400px 100px rgba(255, 255, 255, 0.2);
+}
+.blc-03-light{
+  box-shadow: 0 0 400px 100px rgba(255, 255, 255, 0.2);
+}
+@keyframes blc-04 {
+  0% {
+    box-shadow: 0 0 400px 100px rgb(255, 153, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 400px 100px rgba(240, 240, 240, 0.2);
+  }
+}
+.blc-04-light{
+  box-shadow: 0 0 400px 100px rgba(240, 240, 240, 0.2);
+}
+@keyframes blc-05 {
+  0% {
+    box-shadow: 0 0 400px 100px rgb(255, 153, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 400px 100px rgba(240, 240, 240, 0.2);
+  }
+}
+.blc-05-light{
+  box-shadow: 0 0 400px 100px rgba(240, 240, 240, 0.2);
+}
+.blc-06-light{
+  box-shadow: 0 0 400px 100px rgba(240, 240, 240, 0.2);
+}
+
 @keyframes anim-blackbox{
   0%{
     opacity: 1;
@@ -293,3 +331,13 @@ img {
 .blc-01 {
   animation: blc-01 5s linear ;
 }
+.blc-02 {
+  animation: blc-02 3s linear 2s;
+}
+.blc-04 {
+  animation: blc-04 2s linear 2s;
+}
+.blc-05 {
+  animation: blc-05 3s linear 2s;
+}
+
