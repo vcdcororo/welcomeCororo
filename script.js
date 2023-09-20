@@ -68,4 +68,4 @@ btnTop.addEventListener("click", () => {
         cube.style.transform = `rotateY(${currentDeg}deg) ${faceInfo[currentFace]}`;
         toggleTop = false;
     }
-    });
+});

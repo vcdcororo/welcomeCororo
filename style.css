@@ -59,6 +59,7 @@ section#toggle-page{
   display: none;
   justify-content: center;
   align-items: center;
+  cursor:pointer;
 }
 .page-iframe{
   width: 90vw;
@@ -204,23 +205,23 @@ section#main {
     backface-visibility: hidden;
   }
   
-  .front  { 
-    transform: translateZ(-250px);
+  .front  {  
+    transform: rotateY(-90deg) translateZ(-250px);
     background-position: 0px;
     /* display: none; */
 }
   .back   {
-    transform: rotateY(180deg) translateZ(-250px); 
+    transform: rotateY(90deg) translateZ(-250px);
     background-position: -1000px;
     transform-origin: center;
     }
   .right  {
-    transform: rotateY(-90deg) translateZ(-250px);
+    transform: rotateY(180deg) translateZ(-250px);
     background-position: -500px;
     /* display: none; */
     }
   .left {
-    transform: rotateY(90deg) translateZ(-250px);
+    transform: translateZ(-250px);
     background-position: -1500px;
   }
   .disk {
