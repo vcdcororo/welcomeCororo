@@ -119,6 +119,12 @@ function addDelClass(min, max, target, className) {
 // const comp = document.querySelectorAll(".comp");
 function loadFunction(){
     addDelClass(0, 46, screen, "blc-01");
+    setComp(2, 46, sceneSetting[0].objs[1], "disblock", "disnone" );
+    setComp(13, 46, sceneSetting[0].objs[2], "disblock", "disnone" );
+    setComp(25, 46, sceneSetting[0].objs[3], "disblock", "disnone" );
+    setComp(28, 46, sceneSetting[0].objs[4], "disblock", "disnone" );
+    setComp(34, 46, sceneSetting[0].objs[5], "disblock", "disnone" );
+
     addDelClass(3, 46, screen, "blc-01-light");
     setComp(0, 46, sceneSetting[0].comp, "disblock", "disnone" );
 
@@ -174,4 +180,19 @@ let sceneSetting = [
   }
 ]
 
-// console.log(sceneSetting[0].objs);
+document.addEventListener('mousemove', (e) => {
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+    mouseMoveObj(sceneSetting[0].objs[2], mouseX, mouseY, 0.1);
+    mouseMoveObj(sceneSetting[0].objs[1], mouseX, mouseY, 0.3);
+    mouseMoveObj(sceneSetting[0].objs[3], mouseX, mouseY, -0.2);
+    mouseMoveObj(sceneSetting[0].objs[4], mouseX, mouseY, -0.3);
+    mouseMoveObj(sceneSetting[0].objs[5], mouseX, mouseY, -0.5);
+});
+
+function mouseMoveObj(obj, mx, my, vel){
+  const followerX = (window.innerWidth / 2 - mx) * vel;
+  const followerY = (window.innerHeight / 2 - my) * vel;
+
+  obj.style.transform = `translate(${followerX}px, ${followerY}px)`;
+}

@@ -152,13 +152,22 @@ img {
   height: 100%;
 }
 .sh-02 {
-  z-index: 11;
+  z-index: 12;
   width: 45%;
   bottom: 100px;
   left: 165px;
+  animation: sh-02-anim .4s ease-in forwards;
+}
+@keyframes sh-02-anim {
+  0% {
+    bottom: 300px;
+  }
+  100% {
+    bottom: 100px;
+  }
 }
 .sh-03 {
-  z-index: 12;
+  z-index: 11;
   height: 85%;
   top: 60px;
   left: 40px;
@@ -168,18 +177,45 @@ img {
   width: 380px;
   right: 10px;
   top: 230px;
+  animation: sh-04-anim .4s ease infinite alternate;
+}
+@keyframes sh-04-anim {
+  0% {
+    width: 380px;
+  }
+  100% {
+    width: 480px;
+  }
 }
 .sh-05 {
   z-index: 14;
   width: 380px;
   right: 800px;
   top: 30px;
+  animation: sh-05-anim .6s ease-in-out infinite alternate;
+}
+@keyframes sh-05-anim {
+  0% {
+    width: 380px;
+  }
+  100% {
+    width: 480px;
+  }
 }
 .sh-06 {
   z-index: 15;
   height: 55%;
   top: 0px;
   right: 380px;
+  animation: sh-06-anim 20s ease-in-out alternate;
+}
+@keyframes sh-06-anim {
+  0% {
+    height: 55%;
+  }
+  100% {
+    height: 85%;
+  }
 }
 
 /* 02 jiwon(jw) */
