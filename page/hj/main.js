@@ -85,7 +85,7 @@ audio.addEventListener("timeupdate", function () {
   progressBarHandle.style.left = progress + "%";
   currentSeconds = audio.currentTime;
   currentTime.textContent = formatTime(audio.currentTime);
-  console.log(currentSeconds);
+  // console.log(currentSeconds);
   loadFunction();
 });
 

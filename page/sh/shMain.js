@@ -216,7 +216,7 @@ audio.addEventListener("timeupdate", function () {
   progressBarFill.style.width = progress + "%";
   currentSeconds = audio.currentTime;
   currentTime.textContent = formatTime(audio.currentTime);
-  console.log(currentSeconds);
+  // console.log(currentSeconds);
   if(currentSeconds <= 39) {
     selectImage(0);
   } 
